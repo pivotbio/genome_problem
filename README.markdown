@@ -1,6 +1,6 @@
 # Problem Overview
 
-You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both original reference sequence and its reverse compliment, see google for details of doing a reverse compliment. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
+You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both the original reference sequence and its reverse compliment, see google for details of doing a reverse compliment. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
 
 You are welcome to use whatever resources and tools you like.
 
