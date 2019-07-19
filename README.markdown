@@ -1,21 +1,19 @@
 # Problem Overview
 
-You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of alternations a one genome(the original) would have to have to be the same an another(the desired).  In this fake problem you will need use Django to build a web form which will take in two genomes and return the minimum number of additions and deletions required to turn the original into the desired genome.
+You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both original reference sequence and its reverse compliment, see google for details of doing a reverse compliment. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
 
-You are welcome to use whatever resources and tools you like.  You are also strongly encouraged to Google for algorithms to do this and not design one yourself.
+You are welcome to use whatever resources and tools you like.
 
 # Examples
 
-If the original genome is "catg" and the desired genome is "cat" then it will be 0 insertions and 1 deletion.
 
-If the original is "cataga" and the desired genome is "ataag" then it would be 1 insertion and 2 deletions.
-
-If the original is "cataga" and the desired genome is "catagac" it would be 1 insertion and 0 deletions.
 
 # Details
 
-- Going to the url /genome_form should return a form with two required inputs "Original Genome" and "Desired Genome"
-- A successful post to the same url should return the form filled out and return the numbers of deletions and addition in message as the top with the text "It would take X additions and Y deletions to transform the original into the desired genome".
+- Going to the url /genome_form should return a form with two required inputs "Reference Genome" and "Target Genome".  Remember these string can be incredibly long.
+- To find a match the you will need to take the target genome and calculate its reverse compliment.  Then take both the target and its reverse compliment and search for each in the reference.
+- A successful post to the same url should return the form filled out along with the number of matches and locations within the reference.
+- For long reference genomes this could take a long time so create a model for saving the reference and target genome as well as the locations of any matches.  If a model with a matching reference and target genome exists skip the calculation and just return the cached information.
 - Both fields are required and should validate that they are properly formatted genomes meaning strings only containing C, A, T, and G. If an invalid form is posted then the user should be given clear error messages returned after the POST.
 - This should be treated like a production website with all relevant code tested and commented.
 
