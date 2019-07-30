@@ -6,7 +6,7 @@ You are welcome to use whatever resources and tools you like.
 
 # Examples
 
-Reference genome GATCTA and Target genome ATC will have 2 matches at the 0th and 3rd indexs.
+Reference genome GATATC and Target genome ATC will have 2 matches at the 0th and 3rd indexs.
 
 Reference genome ATCCT and Target genome ATC will have 1 match at the 0th index.
 
