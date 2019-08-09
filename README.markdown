@@ -1,6 +1,6 @@
 # Problem Overview
 
-You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both the original target sequence and its reverse compliment, see google for details of doing a reverse compliment. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
+You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both the original target sequence and its reverse complement, see google for details of doing a reverse complement. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
 
 You are welcome to use whatever resources and tools you like.
 
@@ -18,7 +18,7 @@ Reference genome ACTACTACT and Target genome ACTACT will have 2 matches at the 0
 # Details
 
 - Going to the url /genome_form should return a form with two required inputs "Reference Genome" and "Target Genome".  Remember these string can be incredibly long.
-- To find a match the you will need to take the target genome and calculate its reverse compliment.  Then take both the target and its reverse compliment and search for each in the reference.
+- To find a match you will need to take the target genome and calculate its reverse complement.  Then take both the target and its reverse complement and search for each in the reference.
 - A successful post to the same url should return the form filled out along with the number of matches and locations within the reference.
 - For long reference genomes this could take a long time so create a model for saving the reference and target genome as well as the locations of any matches.  If a model with a matching reference and target genome exists skip the calculation and just return the cached information.
 - Both fields are required and should validate that they are properly formatted genomes meaning strings only containing C, A, T, and G. If an invalid form is posted then the user should be given clear error messages returned after the POST.
