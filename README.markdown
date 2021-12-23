@@ -31,7 +31,7 @@ Please create zip file from your project folder with  all relevant code, setup f
 
 # Scoring
 
-Your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  If you have any questions about the format or become stuck please contact me directly at mikela@pivotbio.com
+Your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  If you have any questions about the format or become stuck please contact me directly at remig@pivotbio.com
 
 
 ```markdown
