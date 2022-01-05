@@ -1,70 +1,47 @@
 # Problem Overview
 
-The bioinformatics team have asked you to make a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match, you need to search for both the original target DNA sequence and its reverse complement from a string of characters that includes A, C, G, and T. The reverse complement of a DNA sequence is formed by reversing the characters and interchanging A and T and interchanging C and G. For example, the reverse complement of ATC is GAT. (Feel free to use Google to find more information about reverse complements.) You will build a tool that will take in target and reference sequences as input and return the number of times and where the target sequence can be found in the reference.
+You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both the original target sequence and its reverse complement, see google for details of doing a reverse complement. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
 
-You are welcome to use whatever resources and tools you would like.
+You are welcome to use whatever resources and tools you like.
 
-# Example Cases
+# Examples
 
-Reference genome GATATC and target genome ATC will have 2 matches at the 0th and 3rd indices.
+Reference genome GATATC and Target genome ATC will have 2 matches at the 0th and 3rd indexs.
 
-Reference genome ATCCT and target genome ATC will have 1 match at the 0th index.
+Reference genome ATCCT and Target genome ATC will have 1 match at the 0th index.
 
-Reference genome CATATGGGCAT and target genome CAT will have 3 matches at the 0th, 3rd, 8th indices.
+Reference genome CATATGGGCAT and Target genome CAT will have 3 matches at the 0th, 3rd, 8th indexs
 
-Reference genome ACTACTACT and target genome ACTACT will have 2 matches at the 0th, and 3rd indices.
+Reference genome ACTACTACT and Target genome ACTACT will have 2 matches at the 0th, and 3rd indexs
 
 
 # Details
 
-- The tool should have two required inputs "Reference Genome" and "Target Genome".
-- To find a match, you will need to use the target genome to calculate its reverse complement.  Then, both the target and its reverse complement should be used to search for each in the reference genome.
-- The tool should return the number of matches and their locations within the reference genome.
-- The tool should validate that the inputs are properly formatted DNA sequences. If invalid input is provided, a user should be given a clear error message to help correct the input.
-- The code should be treated like a production system with appropriate testing, readable names, and comments where appropriate.
+- Going to the url /genome_form should return a form with two required inputs "Reference Genome" and "Target Genome".  Remember these string can be incredibly long.
+- To find a match you will need to take the target genome and calculate its reverse complement.  Then take both the target and its reverse complement and search for each in the reference.
+- A successful post to the same url should return the form filled out along with the number of matches and locations within the reference.
+- For long reference genomes this could take a long time so create a model for saving the reference and target genome as well as the locations of any matches.  If a model with a matching reference and target genome exists skip the calculation and just return the cached information.
+- Both fields are required and should validate that they are properly formatted genomes meaning strings only containing C, A, T, and G. If an invalid form is posted then the user should be given clear error messages returned after the POST.
+- This should be treated like a production website with all relevant code tested and commented.
 
-
-# Additional considerations
-
-The following are some additional issues that you should consider but are not required to write code for:
-
-- For long reference genomes, performing this calculation could take a long time. How would you store the inputs and the outputs to cache the data in, for example, a relational database or other data store?
-- Similarly, the reference genome has the potential to be incredibly long. How does that influence your choice of data store above?
-- If we wanted to include this tool as part of a web application, how would that affect our implementation? What additional issues and considerations might arise?
-
-Please ensure that you are prepared to discuss such issues before pairing.
 
 # Deliverables
 
-If you have been asked to pair on this project, please be ready with a development environment to work with during a 1 hour session. Please do not begin any development before then. It is not expected to have a finished working product before the session or even after. Do not spend more than 2 to 3 hours on prep time.
+If you have been asked to pair on this project, then be ready with a development environment and basic code setup that you can then work together on during a 1 hour session. It is not expected to have a finished working product before the session or even after, please do not spend more than 5 hours prep time.
 
-## For any work done (Pairing or "finished"):
+For any work done (Pairing or "finished")
+Please create zip file from your project folder with  all relevant code, setup files, and a ReadMe.  An example ReadMe as been attached please use it as a template for creating yours and fill out all of the sections.
 
-Please create zip file from your project folder with all relevant code, setup files, and a ReadMe.  An example ReadMe has been attached as a template.
+# Scoring
 
-# Rubric
-
-Your code will be evaluated on the following criteria with consideration for time constraints:
-
-- Readability: variables, functions, and classes are named clearly indicating their purpose
-- Correctness: the code solves the problem as described by the requirements
-- Testing: appropriate tests are included to ensure that the code works correctly
-
-In addition to the technical evaluation, during and after the pairing session you will be evaluated as follows:
-
-- Communication: how well you can explain your implementation plan and any of the additional considerations described above
-- Teamwork: how you work with others together to solve a problem
-- Documentation: the documentation provided afterwards explains how to set up the project and the work you have done concisely
-
-If you have any questions about the format or become stuck, please contact me directly at remig@pivotbio.com
+- For a pairing session, you will be evaluated on your ability to explain your initial setup, implementation plan, how you work with others, and on the readabilty of your code created before and during the session.
+- For a "finished" product, your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  
+- If you have any questions about the format or become stuck please contact me directly at remig@pivotbio.com
 
 # Constraints
 
--  For a pairing session, do not spend more than 2 to 3 hours on prep time.
--  For a "finished" system, do not spend more than 2 to 3 hours of effort. If you find that you have spent this amount and are not done, then please stop and send what you have. We will discuss what you have done during one or more interviews. 
-
-
-# ReadMe example
+-  For a pairing session, do not spend more than 5 hours prep time
+-  For a "finished" system, do not spend more than 10 hours of effort. If you find that you have spent this amount and are not done, then please stop and send what you have. We will discuss what you have done during one or more interviews. 
 
 ```markdown
 # Quickstart Instructions
@@ -73,16 +50,21 @@ If you have any questions about the format or become stuck, please contact me di
 
 Include here all instructions for setting up your application including installing system requirements for your prefered OS as well as language specific packages.  
 
-## Testing
+## Running the server
 
-Include instructions here for how to perform tests.
+Include instructions here required to to start and stop the development server.
+
+## Running tests
+
+Include instructions here for how to run tests.
 
 # Explination of methods
 
-In this section, please explain the method or methods you have used here including both why and how they work in general terms.  
+In this section please explain the method or methods you have used here including both why and how they work in general terms.  Also include an estimate of the time complexity required to determine the alterations required for an original genome of length m and desired genome of legnth n
 
 # TODO
 
 Explain any problems that you encountered and possible solutions you would implement if you had time.  This is also a good place to describe any UI and operational improvement you might want to make in the future.
+
 
 ```
