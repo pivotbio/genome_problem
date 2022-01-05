@@ -2,19 +2,15 @@
 
 ## Installation
 
-Include here all instructions for setting up your application including installing system requirements for your preferred OS as well as language specific packages.
+Include here all instructions for setting up your application including installing system requirements for your prefered OS as well as language specific packages.  
 
-## Running the server
+## Testing
 
-Include instructions here required to to start and stop the development server.
-
-## Running tests
-
-Include instructions here for how to run tests.
+Include instructions here for how to perform tests.
 
 # Explination of methods
 
-In this section please explain the method or methods you have used here including both why and how they work in general terms.  Also include an estimate of the time complexity required to determine the alterations required for an original genome of length m and desired genome of legnth n.
+In this section, please explain the method or methods you have used here including both why and how they work in general terms.  
 
 # TODO
 
