@@ -27,12 +27,21 @@ Reference genome ACTACTACT and Target genome ACTACT will have 2 matches at the 0
 
 # Deliverables
 
+If you have been asked to pair on this project, then be ready with a development environment and basic code setup that you can then work together on during a 1 hour session. It is not expected to have a finished working product before the session or even after, please do not spend more than 5 hours prep time.
+
+For any work done (Pairing or "finished")
 Please create zip file from your project folder with  all relevant code, setup files, and a ReadMe.  An example ReadMe as been attached please use it as a template for creating yours and fill out all of the sections.
 
 # Scoring
 
-Your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  If you have any questions about the format or become stuck please contact me directly at remig@pivotbio.com
+- For a pairing session, you will be evaluated on your ability to explain your initial setup and implementation plan as well as how you work with others as well as on the readabilty of your code created before and during the session.
+- Your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  
+- If you have any questions about the format or become stuck please contact me directly at remig@pivotbio.com
 
+# Constraints
+
+-  For a pairing session, do not spend more than 5 hours prep time
+-  For a "finished" system, do not spend more than 10 hours of effort. If you find that you have spent this amount and are not done, then please stop and send what you have. We will discuss what you have done during one or more interviews. 
 
 ```markdown
 # Quickstart Instructions
