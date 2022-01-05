@@ -35,7 +35,7 @@ Please create zip file from your project folder with  all relevant code, setup f
 # Scoring
 
 - For a pairing session, you will be evaluated on your ability to explain your initial setup, implementation plan, how you work with others, and on the readabilty of your code created before and during the session.
-- Your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  
+- For a "finished" product, your work will primarily be evaluated based on the test quality, code readability, and the clarity of information in the ReadMe.  
 - If you have any questions about the format or become stuck please contact me directly at remig@pivotbio.com
 
 # Constraints
