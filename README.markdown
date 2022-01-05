@@ -1,10 +1,10 @@
 # Problem Overview
 
-You are a lab tech in a pretend lab and have been tasked with making a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match you will need to search for both the original target sequence and its reverse complement, see google for details of doing a reverse complement. You will use Django to build a web form which will take in target and reference sequences and return the number of times the reference sequence can be found in the target.
+The bioinformatics team have asked you to make a tool to determine the number of target sequences inside a reference genome.  When looking for a genetic match, you  need to search for both the original target DNA sequence and its reverse complement from a string of characters that includes A, C, G, and T. The reverse complement of a DNA sequence is formed by reversing the characters and interchanging A and T and interchanging C and G. For example, the reverse complement of ATC is TAG. (Feel free to use Google to find more information about reverse complements.) You will build a tool that will take in target and reference sequences as input and return the number of times and where the reference sequence can be found in the target.
 
-You are welcome to use whatever resources and tools you like.
+You are welcome to use whatever resources and tools you would like.
 
-# Examples
+# Example Cases
 
 Reference genome GATATC and Target genome ATC will have 2 matches at the 0th and 3rd indexs.
 
@@ -17,12 +17,20 @@ Reference genome ACTACTACT and Target genome ACTACT will have 2 matches at the 0
 
 # Details
 
-- Going to the url /genome_form should return a form with two required inputs "Reference Genome" and "Target Genome".  Remember these string can be incredibly long.
-- To find a match you will need to take the target genome and calculate its reverse complement.  Then take both the target and its reverse complement and search for each in the reference.
-- A successful post to the same url should return the form filled out along with the number of matches and locations within the reference.
-- For long reference genomes this could take a long time so create a model for saving the reference and target genome as well as the locations of any matches.  If a model with a matching reference and target genome exists skip the calculation and just return the cached information.
-- Both fields are required and should validate that they are properly formatted genomes meaning strings only containing C, A, T, and G. If an invalid form is posted then the user should be given clear error messages returned after the POST.
-- This should be treated like a production website with all relevant code tested and commented.
+- The tool should have two required inputs "Reference Genome" and "Target Genome".
+- To find a match, you will need to use the target genome to calculate its reverse complement.  Then, both the target and its reverse complement should be used to search for each in the reference genome.
+- The tool should return the number of matches and their locations within the reference genome.
+- The tool should validate that the inputs are properly formatted DNA genomes. If invalid input is provided, a user should be given a clear error message to help correct the input.
+- The code should be treated like a production system with appropriate testing, readable names, and comments where appropriate.
+
+
+# Additional considerations
+
+The following are some additional issues that you should consider and be prepared to discuss during pairing but are not required to write code for:
+
+- For long reference genomes, performing this calculation could take a long time. How would you store the inputs and the outputs to cache the data in, for example, a relational database or other data store?
+- Similarly, the reference genome has the potential to be incredibly long. How does that influence your choice of data store above?
+- If we wanted to include this tool as part of a web application, how would that affect our implementation? What additional issues and considerations might arise?
 
 
 # Deliverables
